@@ -40,7 +40,7 @@ For this project, you will build upon the foundation laid in "Module 4: Python O
 
 **Data Definition Language Scripts:**
 - Create the necessary database tables for the Library Management System. For instance:
-- 
+  
 ```
 CREATE TABLE books (
     id INT AUTO_INCREMENT PRIMARY KEY,
