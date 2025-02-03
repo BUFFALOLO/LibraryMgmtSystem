@@ -1,4 +1,10 @@
 # PROJECT REQUIREMENTS
+In this project, you will integrate a MySQL database with Python to develop an advanced Library Management System. This command-line-based application is designed to streamline the management of books and resources within a library. Your mission is to create a robust system that allows users to browse, borrow, return, and explore a collection of books while demonstrating your proficiency in database integration, SQL, and Python.
+
+**Integration with the "Library Management System" Project from Module 4 (OOP):**
+For this project, you will build upon the foundation laid in "Module 4: Python Object-Oriented Programming (OOP)." The object-oriented structure and classes you developed in that module will serve as the core framework for the Library Management System. You will leverage the classes such as Book, User, Author, and Genre that you previously designed, extending their capabilities to integrate seamlessly with the MySQL database.
+
+
 
 **1. Enhanced User Interface (UI) and Menu:**
 - Create an improved, user-friendly command-line interface (CLI) for the Library Management System with separate menus for each class of the system.
@@ -27,33 +33,41 @@
         2. View author details
         3. Display all authors
   
-**2. Class Structure:**
-Implement a class structure that represents key entities in the library management system, including:
-- Book: A class representing individual books with attributes such as title, author,  genre, publication date, and availability status.
-- User: A class to represent library users with attributes like name, library ID, and a list of borrowed book titles.
-- Author: A class representing book authors with attributes like name and biography.
+**Database Integration with MySQL:**
+- Integrate a MySQL database into the Library Management System to store and retrieve data related to books, users, authors, and genres.
+- Design and create the necessary database tables to represent these entities. You will align these tables with the object-oriented structure from the previous project.
+- Establish connections between Python and the MySQL database for data manipulation, enhancing the persistence and scalability of your Library Management System.
 
-**3. Encapsulation:**
-Apply encapsulation principles by defining private attributes and using getters and setters for necessary data access.
+**Data Definition Language Scripts:**
+- Create the necessary database tables for the Library Management System. For instance:
+        
+        Books Table:
+        CREATE TABLE books (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    author_id INT,
+    isbn VARCHAR(13) NOT NULL,
+    publication_date DATE,
+    availability BOOLEAN DEFAULT 1,
+    FOREIGN KEY (author_id) REFERENCES authors(id),
+        );
+  
+        Book Operations:
+        1. Add a new book
+        2. Borrow a book
+        3. Return a book
+        4. Search for a book
+        5. Display all books
 
-**4. Modules:**
-Organize your code into modules to promote code organization and maintainability. Create separate modules for classes, user interactions, and error handling.
-
-**5. Menu Actions:**
-Implement the following actions in response to menu selections using the classes you've created:
-
-- Adding a new book with all relevant details.
-- Allowing users to borrow a book, marking it as "Borrowed."
-- Allowing users to return a book, marking it as "Available."
-- Searching for a book by its unique identifier (title) and displaying its details.
-- Displaying a list of all books with their unique identifiers.
-- Adding a new user with user details.
-- Viewing user details.
-- Displaying a list of all users.
-- Adding a new author with author details.
-- Viewing author details.
-- Displaying a list of all authors.
-- Quitting the application.
+        User Operations:
+        1. Add a new user
+        2. View user details
+        3. Display all users
+  
+        Author Operations:
+        1. Add a new author
+        2. View author details
+        3. Display all authors
 
 **6. User Interaction:**
 - Utilize the input() function within the appropriate menus to enable users to interact with the CLI and select menu options.
