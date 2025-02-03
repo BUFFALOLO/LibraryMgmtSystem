@@ -40,8 +40,9 @@ For this project, you will build upon the foundation laid in "Module 4: Python O
 
 **Data Definition Language Scripts:**
 - Create the necessary database tables for the Library Management System. For instance:
-
-'CREATE TABLE books (
+- 
+```
+CREATE TABLE books (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     author_id INT,
@@ -49,5 +50,6 @@ For this project, you will build upon the foundation laid in "Module 4: Python O
     publication_date DATE,
     availability BOOLEAN DEFAULT 1,
     FOREIGN KEY (author_id) REFERENCES authors(id),
-);'
+);
+```
 
