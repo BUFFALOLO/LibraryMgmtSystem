@@ -1,4 +1,6 @@
 import re
+from mysql.connector import Error
+from database_connection import connect_database
 from BookClass import Book
 from UserClass import User
 from AuthorClass import Author
